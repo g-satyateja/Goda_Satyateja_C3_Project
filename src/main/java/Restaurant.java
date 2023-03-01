@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,4 +65,13 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderTotal(List<String> selectedItems) {
+
+        int totalAmount = 0;
+
+        for (String item:selectedItems) {
+            totalAmount += menu.get(menu.indexOf(findItemByName(item))).getPrice();
+        }
+        return totalAmount;
+    }
 }
