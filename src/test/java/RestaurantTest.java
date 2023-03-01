@@ -76,4 +76,21 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //>>>>>>>>>>>>>>>>>>>>>>>BILLING<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Test
+    public void get_order_total_should_return_sum_of_all_prices_of_selected_items(){
+
+        List<String> selectedItems = new ArrayList<String>();
+        selectedItems.add("Sweet corn soup");
+        selectedItems.add("Vegetable lasagne");
+
+        int expectedOrderTotal = 388;
+
+        int actualOrderTotal = restaurant.getOrderTotal(selectedItems);
+        Assertions.assertEquals(expectedOrderTotal, actualOrderTotal);
+
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<BILLING>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
